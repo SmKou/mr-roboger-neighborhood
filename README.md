@@ -57,7 +57,7 @@ Demo: [Github Pages](https://smkou.github.io/mr-roboger-neighborhood/)
 
 ## Known Bugs
 
-- 
+- Test script producing incorrect values for and results from comparisons
 
 Please report any issues in viewing the site.
 

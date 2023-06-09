@@ -285,6 +285,10 @@ input.button {
     grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
 }
 
+#roboger-list span {
+    padding: 1.2rem 0;
+}
+
 /* Messages and Notices
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
