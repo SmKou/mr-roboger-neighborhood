@@ -33,13 +33,13 @@ function createNeighbors(num) {
         return [];
     const neighbors = [];
     for (let i = 0; i < num; i++) {
-        let n = i.toString();
-        const iStr = i.toString();
+        let n = String(i).slice();
+        const iStr = String(i).slice();
         if (iStr.includes('1'))
             n = "Beep!"
         if (iStr.includes('2'))
             n = "Boop!"
-        if (iStr.includes(''))
+        if (iStr.includes('3'))
             n = "Won't you be my neighbor?"
         neighbors.push(n)
     }
@@ -53,7 +53,7 @@ function createNeighbors(num) {
  * @returns {String} 
  */
 function generateNeighborhoodList(list) {
-    return list.reduce((acc, val) => acc += '<span>' + val + '</span>', "");
+    // return list.reduce((acc, val) => acc += '<span>' + val + '</span>', "");
 }
 
 /* USER INTERFACE LOGIC */

@@ -113,7 +113,7 @@ function runTests(functionName = "") {
                 result: () => createNeighbors(this.input.num)
             }
         },
-        "generateNeighborList": {
+        "generateNeighborhoodList": {
             "1": {
                 test: "If a list is empty, return an empty string.",
                 input: { list: [] },
@@ -136,7 +136,8 @@ function runTests(functionName = "") {
     }
 
     const compareVal = (expected, returned) => {
-        if (typeof expected !== typeof returned)
+        if (typeof expected !== typeof returned
+            || Boolean(Array.isArray(expected)) === Boolean(Array.isArray(returned)))
             return false;
         let status = false;
         switch (typeof expected) {
@@ -145,7 +146,7 @@ function runTests(functionName = "") {
                 break;
             case 'object':
                 status = (Array.isArray(expected)) ?
-                    expected.join('') === returned.join() :
+                    expected.join(',') === returned.join(',') :
                     Object.keys(expected).join(',') === Object.keys(returned).join(',')
                     && Object.values(expected).join(',') === Object.values(returned).join(',');
                 break;
@@ -167,6 +168,9 @@ function runTests(functionName = "") {
                 'failure'
         )
     })
+
+    console.log("expected", tests[functionName]["2"].expected)
+    console.log("result", tests[functionName]["2"].result())
 
     if (!functionName)
         Object.keys(tests).forEach((key) => execute(key))
