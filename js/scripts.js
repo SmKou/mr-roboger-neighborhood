@@ -9,11 +9,19 @@
  * @returns {Number}
  */
 function parseUserNumber(ipt) {
-    return;
+    let num = ipt.trim();
+    if (!num.length || !num.match(/\d+/g))
+        return 0;
+    num = parseInt(num.match(/\d+/g).join(''));
+    if (num < 0)
+        num = 0;
+    if (num > 400000000000)
+        num = 400000000000;
+    return num;
 }
 
 /**
- * Produces a list of neighbors presented as numbers or strings
+ * Produces a list of neighbors presented as strings
  * - Replace neighbors containing 1 with Beep!
  * - Replace neighbors containing 2 with Boop!
  * - Replace neighbors containing 3 with Won't you be my neighbor?
@@ -21,7 +29,21 @@ function parseUserNumber(ipt) {
  * @returns {String[]} list of neighbors
  */
 function createNeighbors(num) {
-    return;
+    if (num <= 0)
+        return [];
+    const neighbors = [];
+    for (let i = 0; i < num; i++) {
+        let n = i.toString();
+        const iStr = i.toString();
+        if (iStr.includes('1'))
+            n = "Beep!"
+        if (iStr.includes('2'))
+            n = "Boop!"
+        if (iStr.includes(''))
+            n = "Won't you be my neighbor?"
+        neighbors.push(n)
+    }
+    return neighbors;
 }
 
 /**
@@ -50,5 +72,5 @@ window.onload = () => {
     console.log('Enter listFunctions()');
 
     const form = document.querySelector('form');
-    form.addEventListener(submit, handleFormSubmission);
+    form.addEventListener('submit', handleFormSubmission);
 }
