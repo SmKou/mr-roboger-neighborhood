@@ -267,7 +267,12 @@ form {
     border-radius: 0.6rem;
 }
 
-form div {
+form .container {
+    display: flex;
+    justify-content: center;
+}
+
+form .container div {
     display: flex;
     padding: 1.2rem 0;
 }
@@ -288,9 +293,3 @@ input.button {
 #roboger-list span {
     padding: 1.2rem 0;
 }
-
-/* Messages and Notices
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-
-/* Addresses features to be implemented */
-.notice { color: red }
