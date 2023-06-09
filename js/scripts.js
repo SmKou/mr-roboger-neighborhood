@@ -32,7 +32,7 @@ function createNeighbors(num) {
     if (num <= 0)
         return [];
     const neighbors = [];
-    for (let i = 0; i < num; i++) {
+    for (let i = 0; i <= num; i++) {
         let n = String(i).slice();
         const iStr = String(i).slice();
         if (iStr.includes('1'))
@@ -53,7 +53,7 @@ function createNeighbors(num) {
  * @returns {String} 
  */
 function generateNeighborhoodList(list) {
-    // return list.reduce((acc, val) => acc += '<span>' + val + '</span>', "");
+    return list.reduce((acc, val) => acc += '<span>' + val + '</span>', "");
 }
 
 /* USER INTERFACE LOGIC */
