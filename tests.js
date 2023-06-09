@@ -24,6 +24,17 @@ function compareValues(expected, result) {
 }
 
 /**
+ * Prints test details and outcome to console
+ * @param {String} funcName 
+ * @param {String} n 
+ * @param {String} description 
+ * @param {Boolean} outcome 
+ */
+function displayResult(funcName, n, description, outcome) {
+    console.log(`${funcName} Test ${n}: ${description}\n${outcome? 'SUCCESS': 'FAILED'}`)
+}
+
+/**
  * Runs a series of tests
  * Either all test cases of a function or all test cases of all functions
  * Displays results of tests in console
@@ -33,8 +44,26 @@ function compareValues(expected, result) {
  */
 function runTests(functionName = "") {
     const tests = {
-        "parseUserNumber": {},
+        "parseUserNumber": {
+            "1": {
+                test: "If the input string is empty, return 0.",
+                input: {
+                    str: ""
+                },
+                expected: 0,
+                result: () => parseUserNumber(this.input.str)
+            }
+        },
         "createNeighbors": {},
         "generateNeighborList": {}
     }
+
+    const getResults = (test) => {
+        Object.keys(test).forEach(testCase => displayResult(functionName, testCase, test[testCase].test, compareValues(test[testCase].expected, test[testCase].result)))
+    }
+
+    if (funcName.length === 0)
+        Object.keys(tests).forEach(func => getResults(tests[func]))
+    else
+        getResults(tests[functionName])
 }
