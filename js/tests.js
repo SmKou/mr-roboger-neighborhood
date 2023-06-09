@@ -6,9 +6,7 @@ const funcList = ["parseUserNumber", "createNeighbors","generateNeighborList"];
  */
 function listFunctions() {
     funcList.forEach(val => console.log(val));
-    console.log('To run the tests on a function, use runTests("function_name").')
-    console.log('Do not forget to specify a function name with either single or double quotes, and case-sensitive as shown.')
-    console.log('If you would like to see the tests for all functions, enter an empty string.')
+    console.log('To run the tests on a function, use runTests("function_name").\nDo not forget to specify a function name with either single or double quotes, and case-sensitive as shown.\nIf you would like to see the tests for all functions, enter an empty string.')
 }
 
 /**
@@ -160,7 +158,7 @@ function runTests(functionName = "") {
 
     const execute = (functionName) => Object.keys(tests[functionName]).forEach((key) => {
         console.log(
-            `Test ${key}: ${tests[functionName][key].test}\n`,
+            `${functionName} Test ${key}: ${tests[functionName][key].test}\n`,
             (compareVal(
                 tests[functionName][key].expected),
                 tests[functionName][key].result

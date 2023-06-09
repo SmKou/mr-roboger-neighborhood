@@ -53,7 +53,7 @@ function createNeighbors(num) {
  * @returns {String} 
  */
 function generateNeighborhoodList(list) {
-    return;
+    return list.reduce((acc, val) => acc += '<span>' + val + '</span>', "");
 }
 
 /* USER INTERFACE LOGIC */
@@ -63,8 +63,10 @@ function generateNeighborhoodList(list) {
  * Sends data to be processed
  * Displays data in #roboger-list element
  */
-function handleFormSubmission() { 
-    const num = parseUserNumber(document.querySelector('#number-ipt').value);
+function handleFormSubmission(e) {
+    e.preventDefault();
+    const ipt = document.querySelector('#number-ipt');
+    const num = parseUserNumber(ipt.value);
     document.querySelector('#roboger-list').innerHTML = generateNeighborhoodList(createNeighbors(num));
 }
 
