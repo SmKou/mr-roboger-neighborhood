@@ -19,6 +19,15 @@ This app receives a number from the user between 0 and 400000000000, and returns
 
 This app was developed on the idea of test driven development and the tests can be viewed and executed in the console. Refer to Known Bugs.
 
+### Under Consideration
+
+This list is for functionality that may be added to the project.
+
+- Styling on displayed numbers and words
+- Special styling for date and time with real-time display
+- Include options: reverse order
+- Customize form: user name, age, favorite number
+
 ## Setup
 
 This project will not be accepting pull requests, but you may fork the project for your own use.
