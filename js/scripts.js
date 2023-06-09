@@ -15,8 +15,8 @@ function parseUserNumber(ipt) {
     num = parseInt(num.match(/\d+/g).join(''));
     if (num < 0)
         num = 0;
-    if (num > 400000000000)
-        num = 400000000000;
+    if (num > 400000000)
+        num = 400000000;
     return num;
 }
 
@@ -52,7 +52,7 @@ function createNeighbors(num) {
  * @param {String[]} list 
  * @returns {String} 
  */
-function generateNeighborhoodList(list) {
+function generateNeighborhood(list) {
     return list.reduce((acc, val) => acc += '<span>' + val + '</span>', "");
 }
 
@@ -67,7 +67,7 @@ function handleFormSubmission(e) {
     e.preventDefault();
     const ipt = document.querySelector('#number-ipt');
     const num = parseUserNumber(ipt.value);
-    document.querySelector('#roboger-list').innerHTML = generateNeighborhoodList(createNeighbors(num));
+    document.querySelector('#roboger-list').innerHTML = generateNeighborhood(createNeighbors(num));
 }
 
 window.onload = () => {

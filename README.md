@@ -17,6 +17,8 @@ View on [Github Pages](https://smkou.github.io/mr-roboger-neighborhood/)
 
 This app receives a number from the user between 0 and 400000000000, and returns a list of the range of numbers. However, every number containing a 1 is replaced with 'Beep!', then every number containing a 2 is replaced with 'Boop!', and then every number containing a 3 is replaced with 'Won't you be my neightbor?' This list is displayed after pressing submit or pressing enter on the input field.
 
+This app was developed on the idea of test driven development and the tests can be viewed and executed in the console. Refer to Known Bugs.
+
 ## Setup
 
 This project will not be accepting pull requests, but you may fork the project for your own use.
@@ -56,8 +58,6 @@ git remote -v
 Demo: [Github Pages](https://smkou.github.io/mr-roboger-neighborhood/)
 
 ## Known Bugs
-
-- Test script producing incorrect values for and results from comparisons
 
 Please report any issues in viewing the site.
 
