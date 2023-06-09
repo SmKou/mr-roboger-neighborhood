@@ -220,56 +220,33 @@ code {
 
 pre, code { background: #CCC }
 
-/* Spacing
-––––––––––––––––––––––––––––––––––––––––––––––––––
-button,
-.button {
-  margin-bottom: 1rem; }
-input,
-textarea,
-select,
-fieldset {
-  margin-bottom: 1.5rem; }
-pre,
-blockquote,
-dl,
-figure,
-table,
-p,
-ul,
-ol,
-form {
-  margin-bottom: 2.5rem; }
-*/
-
-/* Misc
-––––––––––––––––––––––––––––––––––––––––––––––––––
-hr {
-  margin-top: 3rem;
-  margin-bottom: 3.5rem;
-  border-width: 0;
-  border-top: 1px solid #E1E1E1; }
-*/
-
 /* Template sections
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+
 h1 {
     margin: 2rem auto;
+    margin-top: 4rem;
     text-align: center;
 }
 
 form {
     width: 98%;
-    max-width: 60rem;
+    max-width: 72rem;
     padding: 1.2rem;
     border: 0.1rem solid black;
     border-radius: 0.6rem;
 }
 
 form .container {
+    width: 100%;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
 }
 
 form .container div {
@@ -281,10 +258,14 @@ input.button {
     width: 100%;
     padding: 0 1.0rem;
     color: black;
+    font-family: 'Cutive Mono';
     font-size: 1.8rem;
+    font-weight: 400;
 }
 
 #roboger-list {
+    width: 98%;
+    max-width: 72rem;
     margin: 2.4rem 0;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
@@ -292,4 +273,10 @@ input.button {
 
 #roboger-list span {
     padding: 1.2rem 0;
+    border-bottom: 0.1rem solid transparent;
+    text-align: center;
+}
+
+#roboger-list span:hover {
+    border-bottom-color: #222;
 }
